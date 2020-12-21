@@ -1,0 +1,18 @@
+{
+  "email": "monesh+cypress1@spanllc.com",
+  "password": "Span@123",
+  "companyname": "Abc LLC",
+  "EIN":"254256258",
+  "comadd2": "123 main street",
+  "ccity": "rock hill",
+  "czip": "29730",
+  "ename": "Mathew",
+  "eSSN": "2541",
+  "eaddress1": "123 main street",
+  "empcity": "rock hill",
+  "empzip": "29730",
+  "rate": "10",
+  "salary": "50000",
+  "extrawithholding": "10",
+  "unit": "40"
+}
