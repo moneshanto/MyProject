@@ -1,5 +1,5 @@
 {
-  "name": "PAYSTUB",
+  "name": "paystub",
   "version": "1.0.0",
   "description": "cypress automation testing",
   "main": "index.js",
