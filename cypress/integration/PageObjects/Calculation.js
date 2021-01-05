@@ -1,8 +1,8 @@
 import LoginPage from "./LoginPage"
 
-class Hourlyemp extends LoginPage
+class Calculation extends LoginPage
 {
-   companyName(value)
+    companyName(value)
    {
       cy.wait(5000)
     const cname=cy.get('#mat-input-7')
@@ -140,7 +140,7 @@ class Hourlyemp extends LoginPage
          sbmt.click()
       }
 
-   Wage(value)
+   Wagecal(value)
    {
       cy.wait(2000)
       const fed=cy.get('#mat-input-9')
@@ -148,12 +148,14 @@ class Hourlyemp extends LoginPage
       return this
    }
 
-   withHolding(value)
+   Compensation()
    {
-      cy.wait(2000)
-      const wh=cy.get('#mat-input-10')
-      wh.type(value)
-      return this
+    cy.wait(2000)
+    const comp1=cy.get('#mat-select-1 > .mat-select-trigger > .mat-select-value')
+    comp1.click()
+    cy.wait(2000)
+    const comp2=cy.get('#mat-option-25 > .mat-option-text')
+    comp2.click()
    }
 
    earningStatement()
@@ -168,13 +170,13 @@ class Hourlyemp extends LoginPage
       const sd=cy.get('#mat-input-11')
       sd.click()
       cy.wait(2000)
-      const sd2=cy.get('[aria-label="December 1, 2020"] > .mat-calendar-body-cell-content')
+      const sd2=cy.get('[aria-label="January 1, 2021"] > .mat-calendar-body-cell-content')
       sd2.click()
       cy.wait(2000)
       const pd=cy.get('#mat-input-13')
       pd.click()
       cy.wait(2000)
-      const pd2=cy.get('[aria-label="December 10, 2020"] > .mat-calendar-body-cell-content')
+      const pd2=cy.get('[aria-label="January 7, 2021"] > .mat-calendar-body-cell-content')
       pd2.click()
    }
 
@@ -200,193 +202,77 @@ class Hourlyemp extends LoginPage
       ps.click()
    }
 
-   view()
+   Addps()
    {
-      cy.wait(5000)
-      const vw=cy.get('.arrow > .material-icons')
-      vw.click()
-   }
-   payStub()
-   {
-      cy.wait(10000)
-      const ps=cy.get('.ml-3 > .btn')
-      ps.click()
-      cy.wait(5000)
-   }
+    {
+        cy.wait(5000)
+        const aps=cy.get('.mb-1 > .btn > .mat-button-wrapper > :nth-child(1)')
+        aps.click()
+     }
 
-   close()
-   {
-      cy.wait(5000)
-      const clo=cy.get('.close1 > span > .material-icons')
-      clo.click()
-   }
+     Companyselect()
+     {
+        cy.wait(5000)
+        const compsel1=cy.get('#mat-select-17 > .mat-select-trigger > .mat-select-value > .mat-select-placeholder')
+        compsel1.click()
+        cy.wait(5000)
+        const compsel2=cy.get('#mat-option-358 > .mat-option-text')
+        compsel2.click()
 
-   CompleteOrder()
-   {
-      cy.wait(5000)
-      const order=cy.get('.priview-btn > .btn > .mat-button-wrapper > span')
-      order.click()
-   }
+     }
 
-   checkBox()
-   {
-      cy.wait(5000)
-      const cb=cy.get('.mat-checkbox-inner-container')
-      cb.click()
-   }
+     Newaddress()
+     {
+        cy.wait(5000)
+        const newadd1=cy.get('.mat-select-value-text > .ng-tns-c13-111')
+        newadd1.click()
+        cy.wait(5000)
+        const newadd2=cy.get('#mat-option-360 > .mat-option-text')
+        newadd2.click()
+     }
 
-   Accept()
-   {
-      cy.wait(5000)
-      const ac=cy.get('.dialog-footer > .btn-primary > .mat-button-wrapper')
-      ac.click()
-   }
-
-   cardName(value)
-   {
-      cy.wait(5000)
-      const cnam=cy.get('#mat-input-39')
-      cnam.type(value)
-   }
-
-   
-   cardNumber(value)
-   {
-      cy.wait(5000)
-      const num=cy.get('#mat-input-40')
-      num.type(value)
-   }
-
-   month(value)
-   {
-      cy.wait(5000)
-      const mn=cy.get('#mat-input-41')
-      mn.type(value)
-   }
-
-   Cvv(value)
-   {
-      cy.wait(5000)
-      const cv=cy.get('#mat-input-42')
-      cv.type(value)
-   }
-
-   cardLine(value)
+     NCeLine(value)
    {
       cy.wait(3000)
-      const cardadd=cy.get('#Address1')
-      cardadd.type(value)
+      const empadd2=cy.get('#address1')
+      empadd2.type(value)
       return this
    }
     
-   cardcity(value)
+   Ncity(value)
    {
       cy.wait(3000)
-      const cardcit=cy.get('#City')
-      cardcit.type(value)
+      const empcity=cy.get('#city')
+      empcity.type(value)
       return this
 
    }
-    cardstate()
+    NCstate()
     {
       cy.wait(8000)
-      const ck5=cy.get('.mat-select-placeholder')
-      ck5.click()
+      const ck3=cy.get('#mat-select-8 > .mat-select-trigger > .mat-select-value > .mat-select-placeholder')
+      ck3.click()
       cy.wait(10000)
-      const ck6=cy.get('#mat-option-577 > .mat-option-text')
-      ck6.click()
+      const ck4=cy.get('#mat-option-209')
+      ck4.click()
     }
-
-      cardzip(value)
+      ezip(value)
       {
          cy.wait(2000)
-         const empzip=cy.get('#mat-input-46')
+         const empzip=cy.get('#zipcode')
          empzip.type(value)
          return this
       }
 
-      confirm()
+      esbt()
       {
-         cy.wait(5000)
-         const cf=cy.get('#mat-checkbox-11 > .mat-checkbox-layout > .mat-checkbox-inner-container')
-         cf.click()
+         cy.wait(2000)
+         const sbmt=cy.get('#continueBtn > .mat-button-wrapper')
+         sbmt.click()
       }
 
-      authorize()
-      {
-         cy.wait(5000)
-         const ar=cy.get('.mat-button-wrapper > .ng-star-inserted')
-         ar.click()
-      }
 
-      sendMail()
-      {
-         cy.wait(5000)
-         const sm=cy.get('.text-right > :nth-child(1) > .btn')
-         sm.click()  
-      }
-
-      email(value)
-      {
-         cy.wait(5000)
-         const em=cy.get('#mat-input-47')
-         em.type(value)
-      }
-        
-      saveMail()
-      {
-         cy.wait(5000)
-         const sv=cy.get('.mat-checkbox-inner-container')
-         sv.click()  
-      }
- 
-      sendeMail()
-      {
-         cy.wait(5000)
-         const sem=cy.get('.ng-star-inserted > .btn > .mat-button-wrapper')
-         sem.click()  
-      }
-
-      downloadps()
-      {
-         cy.wait(5000)
-         const dps=cy.get(':nth-child(2) > img')
-         dps.click()  
-      }
-
-      viewPystub()
-      
-         {
-            cy.wait(5000)
-            const vp=cy.get('.res-float-left > :nth-child(2) > :nth-child(1) > img')
-            vp.click() 
-            cy.wait(10000)
-         } 
-
-         closeStub()
-         {
-            cy.wait(10000)
-            const cstub=cy.get('.close1 > span > .material-icons')
-            cstub.click() 
-         
-         }
-
-         Dashboard()
-         {
-            cy.wait(5000)
-            const db=cy.get('.btn > .mat-button-wrapper')
-            db.click() 
-            
-         }
-      
-
+   }
 }
 
-export default Hourlyemp
-
-
-
-
-   
-
-
+export default Calculation

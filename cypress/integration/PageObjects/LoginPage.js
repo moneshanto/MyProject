@@ -8,11 +8,13 @@ class LoginPage extends Browser
 
     signIn()
     {
+        cy.wait(5000)
        const butone=cy.get('[id=btnSignIn]')
        butone.click()
     }
     fillEmail(value)
     {
+        cy.wait(5000)
         const field=cy.get('[id=emailaddress]')
         field.clear()
         field.type(value)
@@ -21,6 +23,7 @@ class LoginPage extends Browser
 
     fillPasword(value)
     {
+        cy.wait(5000)
         const field=cy.get('[id=password]')
         field.clear()
         field.type(value)
