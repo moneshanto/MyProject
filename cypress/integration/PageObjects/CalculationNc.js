@@ -1,6 +1,6 @@
 import LoginPage from "./LoginPage"
 
-class Calculation extends LoginPage
+class CalculationNc extends LoginPage
 {
    companyName(value)
    {
@@ -57,7 +57,7 @@ class Calculation extends LoginPage
    cstate2()
    {
       cy.wait(3000)
-      const ck1=cy.get('#mat-option-151 > .mat-option-text')
+      const ck1=cy.get('#mat-option-144 > .mat-option-text')
       ck1.click()
    }
     
@@ -212,9 +212,46 @@ class Calculation extends LoginPage
       ps.click()
    }
 
-     
+Addps()
+{
+cy.wait(5000)
+      const aps=cy.get('.mb-1 > .btn > .mat-button-wrapper > :nth-child(1)')
+      aps.click()
+}
 
+selectCompany()
+{
+    cy.wait(5000)
+    const selc1=cy.get('#mat-select-17 > .mat-select-trigger > .mat-select-value > .mat-select-placeholder')
+    selc1.click()
+    cy.wait(5000)
+      const selc2=cy.get('#mat-option-358 > .mat-option-text')
+      selc2.click()
+
+}
+     
+newCompany()
+{
+    cy.wait(5000)
+    const ncom=cy.get('.mat-select-value-text > .ng-tns-c13-110')
+    ncom.click()
+}
+
+companyAddl1()
+{
+    cy.wait(5000)
+    const ca1=cy.get('#mat-option-360 > .mat-option-text')
+    ca1.click()
+}
+
+newLine(value)
+{
+    cy.wait(3000)
+      const nl=cy.get('#address1')
+      nl.type(value)
+      return this
+}
      
 }
     
-export default Calculation
+export default CalculationNc

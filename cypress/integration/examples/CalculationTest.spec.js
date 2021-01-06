@@ -46,7 +46,7 @@ import Calculation from '../PageObjects/Calculation'
       cal.units(this.data.unit)
       cal.Calculate()
       cal.previewPaystub()
-      cal.Addps()
+      
       
     })
 })

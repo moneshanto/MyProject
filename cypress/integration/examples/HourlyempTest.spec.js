@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 import Hourlyemp from '../PageObjects/Hourlyemp'
-    describe('Send forgot password', function()
+    describe('Hourly mployee', function()
 {
     before(function() 
     {

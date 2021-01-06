@@ -5,5 +5,7 @@ class Browser
     {
         cy.visit('https://secureeps.payrollspan.net/')
     }
+
+    
 }
 export default Browser

@@ -1,92 +1,103 @@
-import LoginPage from "./LoginPage"
+/// <reference types="cypress" />
 
-class Hourlyemp extends LoginPage
+import Signin from "./Signin"
+
+class Createpaystub extends Signin
 {
-   companyName(value)
-   {
-      cy.wait(5000)
-    const cname=cy.get('#mat-input-7')
-    
-    cname.type(value)
-    return this
-   }
+    companyName(value)
+    {
+     cy.wait(5000)
+     const cname=cy.get('#mat-input-7')
+     cname.type(value)
+     return this
+    }
 
-   EIN(value)
-   {
-      cy.wait(3000)  
+    EIN(value)
+    {
+    cy.wait(3000)  
     const ein=cy.get('#mat-input-2')
     ein.clear()
     ein.type(value)
     return this
-   }
+    }
 
-   cAdd()
-   {
+    companyAddress()
+    {
+     cy.wait(3000)
+     const cadd1=cy.get('#mat-input-8')
+     cadd1.click()
+     }
 
-    cy.wait(3000)
-    const cadd1=cy.get('#mat-input-8')
-    cadd1.click()
-   }
-
-   cadd2(value)
-   {
-
-      cy.wait(3000)
-      const caddr=cy.get('#address1')
-      caddr.type(value)
-      return this
-   }
+     caddressclk(value)
+     {
+     cy.wait(3000)
+     const caddr=cy.get('#address1')
+     caddr.type(value)
+     return this
+     }
    
-   ccity(value)
-   {
-
-      cy.wait(3000)
-    const comcity=cy.get('#city')
-    comcity.type(value)
-    return this
-   }
+     companyCity(value)
+     {
+     cy.wait(3000)
+     const comcity=cy.get('#city')
+     comcity.type(value)
+     return this
+     }
     
-   cstate()
-   {
+     companyState()
+     {
+     cy.wait(3000)
+     const ck=cy.get('#mat-select-7 > .mat-select-trigger > .mat-select-value > .mat-select-placeholder')
+     ck.click()
+     }
 
-      cy.wait(3000)
-      const ck=cy.get('#mat-select-7 > .mat-select-trigger > .mat-select-value > .mat-select-placeholder')
-      ck.click()
-   }
-
-   cstate2()
-   {
+     companystate2()
+      {
       cy.wait(3000)
       const ck1=cy.get('#mat-option-151 > .mat-option-text')
       ck1.click()
-   }
+     }
     
-    czip(value)
-    {
+     companyzip(value)
+     {
       cy.wait(3000)
       const zip=cy.get('#zipcode')
       zip.type(value)
       return this
+      }
 
-    }
-
-    ccon()
-    {
+     companycon()
+     {
       cy.wait(3000)
       const addbtn=cy.get('#continueBtn > .mat-button-wrapper')
       addbtn.click()
-    }
-   
+     }
+     
+     depositSlip()
+     {
+      cy.wait(3000)
+      const addbtn=cy.get('#mat-checkbox-1 > .mat-checkbox-layout > .mat-checkbox-inner-container') 
+      addbtn.click()
+     }
 
-   employeeInfo(value)
-   {
+     checkNumber()
+     {
+      cy.wait(3000)
+      const addbtn=cy.get('#mat-input-29')
+      addbtn.type(value)
+      return this
+     }
+
+
+     employeeInfo(value)
+    {
       cy.wait(3000)
       const empname=cy.get('#mat-input-3')
       empname.type(value)
       return this
-   }
-   SSN(value)
-   {
+     }
+     SSN(value)
+     {
       cy.wait(3000)
       const empssn=cy.get('#mat-input-5')
       empssn.type(value)
@@ -357,36 +368,53 @@ class Hourlyemp extends LoginPage
       viewPystub()
       
          {
-            cy.wait(5000)
-            const vp=cy.get('.res-float-left > :nth-child(2) > :nth-child(1) > img')
-            vp.click() 
-            cy.wait(10000)
+         cy.wait(5000)
+         const vp=cy.get('.res-float-left > :nth-child(2) > :nth-child(1) > img')
+         vp.click() 
+         cy.wait(10000)
          } 
 
          closeStub()
          {
-            cy.wait(10000)
-            const cstub=cy.get('.close1 > span > .material-icons')
-            cstub.click() 
+         cy.wait(10000)
+         const cstub=cy.get('.close1 > span > .material-icons')
+         cstub.click() 
          
          }
 
          Dashboard()
          {
-            cy.wait(5000)
-            const db=cy.get('.btn > .mat-button-wrapper')
-            db.click() 
+         cy.wait(5000)
+         const db=cy.get('.btn > .mat-button-wrapper')
+         db.click() 
             
          }
-      
 
-}
+         logOut()
+         {
+            cy.wait(5000)
+            const lo=cy.get('.log-out > .material-icons')
+            lo.click()
+            cy.wait(5000)
+            const lo2=cy.get('.btn-white-sm')
+            lo2.click()
 
-export default Hourlyemp
+
+         }
+        }
+export default Createpaystub
 
 
 
 
-   
+
+
+
+
+
+
+
+
+
 
 
